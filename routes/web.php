@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\EventsController;
 use App\Http\Controllers\Admin\TransactionController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\EventController as EventAdminController;
+use App\Http\Controllers\PartnerController;
 
 // Rute User Area
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -29,3 +30,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
     Route::get('/transactions', [TransactionController::class, 'index'])->name('transactions.index');
 });
+
+Route::get('/admin/partners', [PartnerController::class, 'index'])->name('admin.partners.index');
+
+Route::post('/admin/partners', [PartnerController::class, 'store'])->name('admin.partners.store');
