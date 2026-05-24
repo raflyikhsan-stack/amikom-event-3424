@@ -24,10 +24,6 @@
     
     <main class="flex-1 p-10 overflow-y-auto">
         <header class="flex justify-between items-center mb-10">
-            <div>
-                <h1 class="text-3xl font-black">Laporan Transaksi</h1>
-                <p class="text-slate-500 font-medium">Pantau arus kas dan penjualan tiket Anda.</p>
-            </div>
             <div class="flex gap-4">
                 <button
                     class="px-6 py-3 border-2 border-slate-200 rounded-2xl font-bold hover:bg-white hover:border-indigo-600 hover:text-indigo-600 transition">
@@ -82,8 +78,8 @@
                                     class="font-mono font-bold text-indigo-600 bg-indigo-50 px-3 py-1 rounded-lg text-sm">#TRX-99210</span>
                             </td>
                             <td class="px-8 py-6">
-                                <p class="font-bold text-slate-800">Donni Prabowo</p>
-                                <p class="text-xs text-slate-500">donni@example.com</p>
+                                <p class="font-bold text-slate-800">Justin Bieber</p>
+                                <p class="text-xs text-slate-500">justinb@example.com</p>
                             </td>
                             <td class="px-8 py-6">
                                 <p class="font-medium text-slate-700">Jazz Night 2024</p>
@@ -105,8 +101,8 @@
                                     class="font-mono font-bold bg-slate-100 px-3 py-1 rounded-lg text-sm">#TRX-99209</span>
                             </td>
                             <td class="px-8 py-6">
-                                <p class="font-bold">Maya Sari</p>
-                                <p class="text-xs">maya@example.com</p>
+                                <p class="font-bold">Angelicia</p>
+                                <p class="text-xs">angel@example.com</p>
                             </td>
                             <td class="px-8 py-6">
                                 <p class="font-medium">AI & Future Workshop</p>
@@ -128,8 +124,8 @@
                                     class="font-mono font-bold text-indigo-600 bg-indigo-50 px-3 py-1 rounded-lg text-sm">#TRX-99208</span>
                             </td>
                             <td class="px-8 py-6">
-                                <p class="font-bold text-slate-800">Budi Santoso</p>
-                                <p class="text-xs text-slate-500">budi@example.com</p>
+                                <p class="font-bold text-slate-800">Neymar jr</p>
+                                <p class="text-xs text-slate-500">ney@example.com</p>
                             </td>
                             <td class="px-8 py-6">
                                 <p class="font-medium text-slate-700">Hackathon 2024</p>

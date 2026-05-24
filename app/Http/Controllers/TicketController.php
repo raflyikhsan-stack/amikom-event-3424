@@ -1,13 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Transaction;
 
 use Illuminate\Http\Request;
 
 class TicketController extends Controller
 {
-    public function show(){
+    public function ticket() {
         return view('ticket');
-        }
+    }
 }

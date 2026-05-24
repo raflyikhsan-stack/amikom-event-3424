@@ -8,17 +8,26 @@ use App\Http\Controllers\Admin\EventsController;
 use App\Http\Controllers\Admin\TransactionController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\EventController as EventAdminController;
-use App\Http\Controllers\PartnerController;
+use App\Http\Controllers\Admin\PartnerController;
 
 // Rute User Area
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/event/{id}', [EventController::class,'show'])->name('event-detail');
-Route::get('/checkout', [EventController::class,'checkout'])->name('checkout');
-Route::get('/my-ticket/{id?}', [TicketController::class, 'show'])->name('my-ticket');
+Route::get('/event/1', [EventController::class, 'show'])->name('events.show');
+Route::get('/checkout', [EventController::class, 'checkout'])->name('checkout');
+Route::get('/my-ticket', [TicketController::class, 'ticket'])->name('ticket');
 
-Route::get('/bantuan', [HomeController::class, 'bantuan'])->name('bantuan');
-Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
-Route::get('/profil', [HomeController::class, 'profil'])->name('profile');
+Route::get('/katalog', function() {
+    return view('catalog');
+});
+Route::get('/bantuan', function() {
+    return view('bantuan');
+});
+Route::get('/contact', function() {
+    return view('contact');
+});
+Route::get('/profil', function() {
+    return view('profile');
+});
 
 // Rute Admin Area
 
@@ -26,9 +35,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     
-    Route::get('/events', [EventsController::class, 'index'])->name('events.index');
-    Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
-    Route::get('/transactions', [TransactionController::class, 'index'])->name('transactions.index');
+    Route::resource('/events', EventAdminController::class);
+
+    Route::get('/transactions', [DashboardController::class, 'transactionsAdmin'])->name('transactions.index');
 });
 
 Route::get('/admin/partners', [PartnerController::class, 'index'])->name('admin.partners.index');

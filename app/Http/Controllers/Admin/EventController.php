@@ -13,9 +13,8 @@ class EventController extends Controller
      */
     public function index()
     {
-        //
-        $events = \App\Models\Event::with('category')->latest()->paginate(10);
-return view('admin.events.index', compact('events'));
+        $events = \App\Models\Event::paginate(10);
+        return view('admin.events.index', compact('events'));
     }
 
     /**
@@ -23,9 +22,8 @@ return view('admin.events.index', compact('events'));
      */
     public function create()
     {
-        //
         $categories = \App\Models\Category::all();
-return view('admin.events.create', compact('categories'));
+        return view('admin.events.create', compact('categories'));
     }
 
     /**
@@ -33,7 +31,6 @@ return view('admin.events.create', compact('categories'));
      */
     public function store(Request $request)
     {
-        //
         $data = $request->validate([
             'category_id' => 'required',
             'title' => 'required|string|max:255',
@@ -48,8 +45,7 @@ return view('admin.events.create', compact('categories'));
 
 
 
-return redirect()->route('admin.events.index')->with('success', 'Data Event
-berhasil ditambahkan.');
+        return redirect()->route('admin.events.index')->with('success', 'Data Event berhasil ditambahkan.');
     }
 
     /**
@@ -65,7 +61,6 @@ berhasil ditambahkan.');
      */
     public function edit(Event $event)
     {
-        //
         $categories = \App\Models\Category::all();
 return view('admin.events.edit', compact('event', 'categories'));
     }
@@ -75,7 +70,6 @@ return view('admin.events.edit', compact('event', 'categories'));
      */
     public function update(Request $request, Event $event)
     {
-        //
         $data = $request->validate([
             'category_id' => 'required',
             'title' => 'required|string|max:255',
@@ -90,8 +84,7 @@ return view('admin.events.edit', compact('event', 'categories'));
             
             $event->update($data);
             
-            return redirect()->route('admin.events.index')->with('success', 'Rincian
-            data event berhasil diperbarui.');
+            return redirect()->route('admin.events.index')->with('success', 'Rincian data event berhasil diperbarui.');
     }
 
     /**
@@ -99,9 +92,7 @@ return view('admin.events.edit', compact('event', 'categories'));
      */
     public function destroy(Event $event)
     {
-        //
         $event->delete();
-return redirect()->route('admin.events.index')->with('success', 'Data event
-berhasil dihapus secara permanen.');
+        return redirect()->route('admin.events.index')->with('success', 'Data event berhasil dihapus secara permanen.');
     }
 }
