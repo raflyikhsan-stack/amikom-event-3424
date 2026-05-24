@@ -11,4 +11,11 @@ class DashboardController extends Controller
     {
         return view('admin.dashboard'); 
     }
+    public function indexAdmin() {
+        return view('admin.events');
+    }
+
+    public function transactionsAdmin() {
+        return view('admin.transactions');
+    }
 }

@@ -28,7 +28,7 @@
             <a href="/profil" class="text-xs bg-slate-100 text-slate-600 py-2 px-3 rounded-lg hover:bg-indigo-600 hover:text-white hover:shadow-md transition duration-300">Profil</a>
             <a href="/katalog" class="text-xs bg-slate-100 text-slate-600 py-2 px-3 rounded-lg hover:bg-indigo-600 hover:text-white hover:shadow-md transition duration-300">Katalog</a>
             <a href="/bantuan" class="text-xs bg-indigo-600 text-white py-2 px-3 rounded-lg shadow-md transition duration-300">Bantuan</a>
-            <a href="/kontak" class="text-xs bg-slate-100 text-slate-600 py-2 px-3 rounded-lg hover:bg-indigo-600 hover:text-white hover:shadow-md transition duration-300">Kontak</a>
+            <a href="/contact" class="text-xs bg-slate-100 text-slate-600 py-2 px-3 rounded-lg hover:bg-indigo-600 hover:text-white hover:shadow-md transition duration-300">Kontak</a>
         </div>
     </div>
 </body>

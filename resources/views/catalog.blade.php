@@ -11,14 +11,24 @@
 
         <div class="grid grid-cols-2 gap-4 mb-8">
             <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 hover:border-indigo-300 hover:shadow-md transition duration-300 cursor-pointer">
-                <div class="bg-indigo-100 h-16 rounded-lg mb-3 flex items-center justify-center text-2xl"></div>
-                <h3 class="text-sm font-bold text-slate-700">Workshop Laravel</h3>
-                <p class="text-xs text-slate-400 mt-1">20 Mei 2026</p>
+                <div class="bg-emerald-100 h-16 rounded-lg mb-3 flex items-center justify-center text-2xl"></div>
+                <h3 class="text-sm font-bold text-slate-700">Seminar IT</h3>
+                <p class="text-xs text-slate-400 mt-1">Lihat di Halaman Utama</p>
             </div>
             <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 hover:border-indigo-300 hover:shadow-md transition duration-300 cursor-pointer">
-                <div class="bg-emerald-100 h-16 rounded-lg mb-3 flex items-center justify-center text-2xl"></div>
-                <h3 class="text-sm font-bold text-slate-700">Seminar UI/UX</h3>
-                <p class="text-xs text-slate-400 mt-1">25 Mei 2026</p>
+                <div class="bg-indigo-100 h-16 rounded-lg mb-3 flex items-center justify-center text-2xl"></div>
+                <h3 class="text-sm font-bold text-slate-700">Entertainment</h3>
+                <p class="text-xs text-slate-400 mt-1">Lihat di Halaman Utama</p>
+            </div>
+            <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 hover:border-indigo-300 hover:shadow-md transition duration-300 cursor-pointer">
+                <div class="bg-indigo-100 h-16 rounded-lg mb-3 flex items-center justify-center text-2xl"></div>
+                <h3 class="text-sm font-bold text-slate-700">Workshop</h3>
+                <p class="text-xs text-slate-400 mt-1">Lihat di Halaman Utama</p>
+            </div>
+            <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 hover:border-indigo-300 hover:shadow-md transition duration-300 cursor-pointer">
+                <div class="bg-indigo-100 h-16 rounded-lg mb-3 flex items-center justify-center text-2xl"></div>
+                <h3 class="text-sm font-bold text-slate-700">Content Creator</h3>
+                <p class="text-xs text-slate-400 mt-1">Coming Soon</p>
             </div>
         </div>
 
@@ -27,7 +37,7 @@
             <a href="/profil" class="text-xs bg-slate-100 text-slate-600 py-2 px-3 rounded-lg hover:bg-indigo-600 hover:text-white hover:shadow-md transition duration-300">Profil</a>
             <a href="/katalog" class="text-xs bg-indigo-600 text-white py-2 px-3 rounded-lg shadow-md transition duration-300">Katalog</a>
             <a href="/bantuan" class="text-xs bg-slate-100 text-slate-600 py-2 px-3 rounded-lg hover:bg-indigo-600 hover:text-white hover:shadow-md transition duration-300">Bantuan</a>
-            <a href="/kontak" class="text-xs bg-slate-100 text-slate-600 py-2 px-3 rounded-lg hover:bg-indigo-600 hover:text-white hover:shadow-md transition duration-300">Kontak</a>
+            <a href="/contact" class="text-xs bg-slate-100 text-slate-600 py-2 px-3 rounded-lg hover:bg-indigo-600 hover:text-white hover:shadow-md transition duration-300">Kontak</a>
         </div>
     </div>
 </body>
