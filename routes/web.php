@@ -33,13 +33,13 @@ Route::get('/profil', function() {
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     
     Route::resource('/events', EventAdminController::class);
 
     Route::get('/transactions', [DashboardController::class, 'transactionsAdmin'])->name('transactions.index');
+
+    Route::resource('/partners', PartnerController::class);
+    
+    Route::resource('/categories', \App\Http\Controllers\Admin\CategoryController::class);
 });
-
-Route::get('/admin/partners', [PartnerController::class, 'index'])->name('admin.partners.index');
-
-Route::post('/admin/partners', [PartnerController::class, 'store'])->name('admin.partners.store');

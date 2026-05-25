@@ -63,6 +63,12 @@ text-white' : 'hover:bg-indigo-800' }} rounded-xl font-bold transition">
                 </svg>
                 Kelola Event
             </a>
+            <a href="{{ route('admin.categories.index') }}" class="flex items-center gap-3 px-4 py-3 {{ request()->routeIs('admin.categories.*') ? 'bg-indigo-800 text-white' : 'hover:bg-indigo-800' }} rounded-xl font-bold transition">
+                <svg class="w-5 h-5 {{ request()->routeIs('admin.categories.*') ? 'text-indigo-300' : 'text-indigo-400' }}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
+                </svg>
+                Kelola Kategori
+            </a>
             <a href="{{ route('admin.transactions.index') }}" class="flex
 items-center gap-3 px-4 py-3 {{ request()->routeIs('admin.transactions.*') ?
 'bg-indigo-800 text-white' : 'hover:bg-indigo-800' }} rounded-xl font-bold

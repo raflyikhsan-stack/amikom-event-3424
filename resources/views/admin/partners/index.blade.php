@@ -41,6 +41,32 @@
         </div>
     </div>
 
+    <div class="flex justify-between items-center bg-white p-4 rounded-3xl border border-slate-100 shadow-sm">
+        <div class="flex-1 max-w-md">
+            <form action="{{ route('admin.partners.index') }}" method="GET" class="relative group">
+                <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                    <svg class="w-5 h-5 text-slate-400 group-focus-within:text-indigo-500 transition" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </div>
+                <input type="text" name="search" 
+                    class="w-full pl-11 pr-4 py-3 rounded-2xl border border-slate-200 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition outline-none text-sm" 
+                    placeholder="Cari nama partner..." 
+                    value="{{ request('search') }}">
+                
+                @if(request('search'))
+                    <a href="{{ route('admin.partners.index') }}" class="absolute inset-y-0 right-0 pr-4 flex items-center text-slate-400 hover:text-red-500">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                    </a>
+                @endif
+            </form>
+        </div>
+        
+        <div class="hidden md:block text-right">
+            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest">Total: {{ $partners->count() }} Partner</p>
+        </div>
+    </div>
+
     <div>
         <h4 class="text-xl font-black text-slate-800 mb-6">Daftar Partner yang Mendukung</h4>
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">

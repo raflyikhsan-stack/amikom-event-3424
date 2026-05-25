@@ -3,30 +3,58 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Partner;
+use App\Models\Partners;
 use Illuminate\Http\Request;
 
 class PartnerController extends Controller
 {
-    public function index()
-    { 
-        $partners = Partner::all(); 
+    public function index(Request $request) {
+        $query = \App\Models\Partner::query();
+        
+        if ($request->has('search') && $request->search != '') {
+            $query->where('name', 'LIKE', '%' . $request->search . '%');
+        }
+        
+        $partners = $query->paginate(10);
+        
+        return view('admin.partners.index', compact('partners'));
 
-        return view('admin.partners.index', compact('partners')); 
+    }
+
+    public function create() {
+        return view('admin.partners.create');
     }
 
     public function store(Request $request)
     {
-        $request->validate([
+        $data = $request->validate([
             'name' => 'required|string|max:255',
             'logo_url' => 'required|string',
         ]);
 
-        Partner::create([
-            'name' => $request->name,
-            'logo_url' => $request->logo_url,
+        \App\Models\Partners::create($data);
+
+        return redirect()->route('admin.partners.index')->with('success', 'Data Partner berhasil ditambahkan.');
+    }
+
+    public function edit(\App\Models\Partners $partner) {
+        return view('admin.partners.edit', compact('partner'));
+    }
+
+    public function update(Request $request, \App\Models\Partners $partner) {
+        $data = $request->validate([
+            'name' => 'required|string|max:255',
+            'logo_url' => 'required|string',
         ]);
- 
-        return redirect()->route('admin.partners.index')->with('success', 'Partner baru berhasil ditambahkan!');
+
+        $partner->update($data);
+
+        return redirect()->route('admin.partners.index')->with('success', 'Data Partner berhasil diperbarui.');
+    }
+
+    public function destroy(\App\Models\Partners $partner) {
+        $partner->delete();
+
+        return redirect()->route('admin.partners.index')->with('success', 'Data Partner berhasil dihapus.');
     }
 }

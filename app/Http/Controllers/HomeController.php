@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Event;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Models\Event;
 
 class HomeController extends Controller
 {
-    public function index(Request $request)
-    {
+    public function index(Request $request) {
         $categories = Category::all();
+        $partners = \App\Models\Partner::all();
 
         $query = Event::with('category')->where('date','>=',now())->orderBy('date','asc');
 
@@ -19,9 +19,9 @@ class HomeController extends Controller
                 $q->where('slug', $request->category);
             });
         }
-            
+
         $events = $query->get();
 
-        return view('welcome', compact('categories', 'events'));
+        return view('welcome', compact('events', 'categories', 'partners'));
     }
 }
