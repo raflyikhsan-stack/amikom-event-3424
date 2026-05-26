@@ -19,6 +19,16 @@
             @enderror
         </div>
 
+        <div>
+            <label class="block text-sm font-bold text-slate-700 mb-2 uppercase tracking-wide">Slug (URL)</label>
+
+            <input type="text" name="slug" value="{{ old('slug', $category->slug) }}" 
+                class="w-full px-5 py-4 bg-slate-100 border-2 border-slate-100 rounded-2xl text-slate-500 cursor-not-allowed outline-none font-medium" 
+                placeholder="otomatis-terisi" readonly>
+            
+            <small class="text-slate-400 mt-1 block italic text-xs">*Slug akan diperbarui otomatis oleh sistem berdasarkan nama.</small>
+        </div>
+
         <div class="pt-4 flex justify-end gap-4 border-t border-slate-100">
             <a href="{{ route('admin.categories.index') }}" class="px-6 py-4 text-slate-500 font-bold hover:text-slate-800 transition">Batal</a>
 

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Partners;
+use App\Models\Partner;
 use Illuminate\Http\Request;
 
 class PartnerController extends Controller
@@ -32,16 +32,16 @@ class PartnerController extends Controller
             'logo_url' => 'required|string',
         ]);
 
-        \App\Models\Partners::create($data);
+        \App\Models\Partner::create($data);
 
         return redirect()->route('admin.partners.index')->with('success', 'Data Partner berhasil ditambahkan.');
     }
 
-    public function edit(\App\Models\Partners $partner) {
+    public function edit(\App\Models\Partner $partner) {
         return view('admin.partners.edit', compact('partner'));
     }
 
-    public function update(Request $request, \App\Models\Partners $partner) {
+    public function update(Request $request, \App\Models\Partner $partner) {
         $data = $request->validate([
             'name' => 'required|string|max:255',
             'logo_url' => 'required|string',
@@ -52,7 +52,7 @@ class PartnerController extends Controller
         return redirect()->route('admin.partners.index')->with('success', 'Data Partner berhasil diperbarui.');
     }
 
-    public function destroy(\App\Models\Partners $partner) {
+    public function destroy(\App\Models\Partner $partner) {
         $partner->delete();
 
         return redirect()->route('admin.partners.index')->with('success', 'Data Partner berhasil dihapus.');
