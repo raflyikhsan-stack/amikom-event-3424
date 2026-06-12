@@ -6,9 +6,10 @@ use Illuminate\Http\Request;
 
 class EventController extends Controller
 {
-    public function show()
+    public function show(\App\Models\Event $event)
     {
-        return view('event-detail');
+        $categories = \App\Models\Category::all();
+        return view('event-detail', compact('categories', 'event'));
     }
     public function checkout()
     {
