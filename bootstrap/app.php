@@ -21,6 +21,11 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->redirectTo(
             'admin/login'
         );
+
+        // Mengecualikan route webhook Midtrans dari blokir CSRF (Tambahan Modul 12)
+        $middleware->validateCsrfTokens(except: [
+            '/midtrans/callback',
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //

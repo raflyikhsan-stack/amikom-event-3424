@@ -30,6 +30,15 @@ Route::get('/profil', function() {
     return view('profile');
 });
 
+Route::get('/checkout/{event}', [App\Http\Controllers\CheckoutController::class, 'create'])->name('checkout.create');
+Route::post('/checkout/{event}', [App\Http\Controllers\CheckoutController::class, 'store'])->name('checkout.store');
+
+Route::get('/payment/{order_id}', [App\Http\Controllers\CheckoutController::class, 'payment'])->name('checkout.payment');  
+
+Route::get('/success/{order_id}', [App\Http\Controllers\CheckoutController::class, 'success'])->name('checkout.success');
+
+Route::post('/midtrans/callback', [App\Http\Controllers\MidtransWebhookController::class, 'handle']); 
+
 // Rute Admin Area
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
@@ -46,7 +55,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::resource('/events', EventAdminController::class);
         Route::resource('/partners', PartnerController::class);
         Route::resource('/categories', CategoryController::class);
-        Route::get('/transactions', [TransactionController::class, 'transactionsAdmin'])->name('transactions.index');
+        Route::get('/transactions', [TransactionController::class, 'index'])->name('transactions.index');
     });
 
     // Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
